@@ -1,0 +1,10 @@
+server:
+  port: ${PORT:9300}
+
+spring:
+  application:
+    name: matlab-client
+
+envoy:
+  discovery:
+    url: ${DISCOVERY_URL:https://matlab-server.herokuapp.com}
