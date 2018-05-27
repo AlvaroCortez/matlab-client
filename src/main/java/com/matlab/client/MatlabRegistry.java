@@ -32,25 +32,25 @@ public class MatlabRegistry implements ApplicationListener<ApplicationReadyEvent
 
     @Override
     public void onApplicationEvent(ApplicationReadyEvent event) {
-        LOGGER.info("PersonRegistration.register");
-        try {
-            ip = InetAddress.getLocalHost().getHostAddress();
-            DiscoveryHost host = new DiscoveryHost();
-            host.setPort(port);
-            host.setIpAddress(ip);
-            template.postForObject(discoveryUrl + "/v1/registration/{service}", host, DiscoveryHosts.class, appName);
-        } catch (Exception e) {
-            LOGGER.error("Error during registration", e);
-        }
+//        LOGGER.info("PersonRegistration.register");
+//        try {
+//            ip = InetAddress.getLocalHost().getHostAddress();
+//            DiscoveryHost host = new DiscoveryHost();
+//            host.setPort(port);
+//            host.setIpAddress(ip);
+//            template.postForObject(discoveryUrl + "/v1/registration/{service}", host, DiscoveryHosts.class, appName);
+//        } catch (Exception e) {
+//            LOGGER.error("Error during registration", e);
+//        }
     }
 
     @PreDestroy
     public void destroy() {
-        try {
-            template.delete(discoveryUrl + "/v1/registration/{service}/{ip}/", appName, ip);
-            LOGGER.info("PersonRegister.unregistered: service={}, ip={}", appName, ip);
-        } catch (Exception e) {
-            LOGGER.error("Error during unregistration", e);
-        }
+//        try {
+//            template.delete(discoveryUrl + "/v1/registration/{service}/{ip}/", appName, ip);
+//            LOGGER.info("PersonRegister.unregistered: service={}, ip={}", appName, ip);
+//        } catch (Exception e) {
+//            LOGGER.error("Error during unregistration", e);
+//        }
     }
 }

@@ -7,4 +7,12 @@ spring:
 
 envoy:
   discovery:
-    url: ${DISCOVERY_URL:https://matlab-server.herokuapp.com}
+    url: ${DISCOVERY_URL:http://192.168.31.177:9200}
+
+eureka:
+  client:
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://192.168.31.177:8761/eureka/
+  instance:
+    prefer-ip-address: true
